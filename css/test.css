@@ -1,23 +1,23 @@
 *{
-    margin: 0;
+    margin:0;
 }
 body{
-    background-color:#2f2f2f;
+	background-color: #2F2F2F;
 }
 .wrapper{
-    max-width: 900px;
+    max-width:900px;
     margin:80px auto;
 }
 .wrapper li{
     position: relative;
     width: 180px;
     height: 180px;
-    list-style: none;
+    list-style:none;
     margin: 5px;
     display: inline-block;
-
-}
-.picBox{
+    perspective: 300px;
+  }
+  .picBox{
     position: absolute;
     top: 0;
     right: 0;
@@ -26,40 +26,46 @@ body{
     transform-style: preserve-3d;
     transform-origin: 50% 50% -90px;
     animation: 200ms ease-out 0ms 1 normal forwards;
-}
-.show,.hide{
+  }
+
+.show,
+.hide{
     position: absolute;
-    top:0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-}
+  }
 .hide{
-    color: #fff;
-    background-color: #000;
-    text-align: center;
-    line-height: 180px;
+    color:#fff;
+    background-color:#000;
+    text-align:center;
+    line-height:180px;
     transform: translate3d(0,0,-1px);
+    /* 3D空间内移动一个元素的位置 */
 }
+
+
 .in-top .hide,
 .out-top .hide
-{
-    transform-origin:0% 100%;
-    transform: translate3d(0,-100%,0) rotate3d(1,0,0,90deg); 
+ {
+    transform-origin: 0% 100%;
+    transform: translate3d(0, -100%, 0) rotate3d(1,0,0,90deg);
 }
 .in-top .picBox{
-    animation-name:in-top;
+    animation-name: in-top;
     animation-play-state: running;
 }
 .out-top .picBox{
-    animation-name:out-top;
+    animation-name: out-top;
     animation-play-state: running;
 }
-@keyframes in-top{
-    from {transform: rotate3d(0,0,0,0deg)}
-    to   {transform: rotate3d(-1,0,0,90deg)}
-}
-@keyframes out-top{
+@keyframes in-top {
+    from  {transform: rotate3d(0,0,0,0deg)}
+    to    {transform: rotate3d(-1,0,0,90deg)}
+} 
+
+@keyframes out-top {
     from {transform: rotate3d(-1,0,0,90deg)}
     to   {transform: rotate3d(0,0,0,0deg)}
 }
@@ -128,3 +134,9 @@ body{
           animation-name: out-left;
           animation-play-state: running;
 }
+
+
+
+
+
+
