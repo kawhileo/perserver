@@ -61,5 +61,6 @@ Index.prototype.getDirection = function (e, index) {
 
     
     return d;//d的数值用于判断方向上下左右。
+    
 };
 new Index($('li')); 
